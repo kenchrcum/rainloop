@@ -44,12 +44,12 @@ docker build -t rainloop_1.14.0 .
 ```
 ```yml
 rainloop:
-image: rainloop_1.14.0
-restart: always
-volumes:
-  - ./rainloop:/rainloop/data
-ports:
-  - 80:8888
+  image: rainloop_1.14.0
+  restart: always
+  volumes:
+    - ./rainloop:/rainloop/data
+  ports:
+    - 80:8888
 
 ```
 
