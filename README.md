@@ -1,8 +1,10 @@
-# hardware/rainloop
+# kenchrcum/rainloop
 
 ![](https://i.goopics.net/nI.png)
 
 ### What is this ?
+
+This is a fork from https://github.com/hardware/rainloop aiming to maintain a docker image running rainloop in the latest version.
 
 Rainloop is a simple, modern & fast web-based client. More details on the [official website](http://www.rainloop.net/).
 
@@ -35,17 +37,20 @@ Rainloop is a simple, modern & fast web-based client. More details on the [offic
 
 ### Docker-compose.yml
 
+```shell
+git clone https://github.com/kenchrcum/rainloop.git
+cd rainloop
+docker build -t rainloop_1.14.0 .
+```
 ```yml
-# Full example :
-# https://github.com/hardware/mailserver/blob/master/docker-compose.sample.yml
-
 rainloop:
-  image: hardware/rainloop
-  container_name: rainloop
-  volumes:
-    - /mnt/docker/rainloop:/rainloop/data
-  depends_on:
-    - mailserver
+image: rainloop_1.14.0
+restart: always
+volumes:
+  - ./rainloop:/rainloop/data
+ports:
+  - 80:8888
+
 ```
 
 #### How to setup
